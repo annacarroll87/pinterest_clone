@@ -1,0 +1,20 @@
+<h2 class="display-1">Your Pin</h2>
+<h4 class="title">Viewing your amazing pins</h4>
+<div class="demo-card">
+    <div class="card">
+        <%= image_tag @pin.image.url(:show) %>
+        <div class="card-block">
+            <h4><%= @pin.title %></h4>
+            <p class="card-text"><%= @pin.description %></p>
+        </div>
+        <div class="card-block">
+        	<% if current_user == @pin.user %>
+            <%= link_to 'Edit', edit_pin_path(@pin), class: "btn btn-info" %>
+            <%= link_to 'Delete', pin_path(pin), method: :delete, class: "btn btn-danger" %>
+          <% end %>
+            <%= link_to 'Pins', pins_path, class: "btn btn-secondary" %>
+          
+        </div>
+        
+    </div>
+</div>

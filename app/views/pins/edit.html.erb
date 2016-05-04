@@ -1,0 +1,13 @@
+<div class="container">
+	<h1>Edit Your Pin</h1>
+	<%= form_for @pin, html: { multipart: true } do |f| %>
+	  <p>Photo: <%= f.file_field :image %></p>
+	  <p>Title: <%= f.text_field :title %></p>
+	  <p>Description : <%= f.text_field :description %></p>
+	  <p><%= f.submit %></p>
+	<% end %>
+
+	<%= link_to 'Show', pin_path(@pin), class: "btn btn-primary" %> 
+	<%= link_to 'Pins', pins_path, class: "btn btn-secondary" %>
+</div>
+

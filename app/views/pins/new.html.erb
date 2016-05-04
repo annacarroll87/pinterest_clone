@@ -1,0 +1,9 @@
+<%= form_for @pin, html: { multipart: true}  do |f| %>
+  <%= f.file_field :image %>
+  Title: <%= f.text_field :title %>
+  Description : <%= f.text_field :description %>
+  <%= f.submit %>
+ 
+<% end %>
+
+
